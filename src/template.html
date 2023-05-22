@@ -22,14 +22,26 @@
     </div>
     <div id="main_container">
       <div id="left_nav">
-        <div id="new_project_container">
-          <input type="text" id="new_project" placeholder="New Project Name" />
-          <button id="submit_new_project">Create</button>
+        <div id="project_list">
+          <button id="home">Home</button>
+          <button id="today">Today</button>
+          <button id="week">Week</button>
+          <div id="project_viewer">
+            <div id="new_project_container">
+              <input
+                type="text"
+                id="new_project"
+                placeholder="New Project Name"
+              />
+              <button id="submit_new_project">Create</button>
+            </div>
+            <button id="projects">Projects</button>
+          </div>
         </div>
-        <div id="project_list"></div>
       </div>
       <div id="main_display">
         <div id="task_container">
+          <h2 id="current_display">Odin Project</h2>
           <div id="new_task_input">
             <input
               type="text"

@@ -74,6 +74,45 @@ body {
   align-items: center;
 }
 
+#project_list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--large_padding);
+  flex: auto;
+}
+
+#home,
+#today,
+#week,
+#projects {
+  font-size: 1.5rem;
+  width: 2vw;
+  font-family: var(--main_font);
+  border: none;
+  background-color: var(--secondary_color);
+  color: var(--fourth_color);
+  padding-top: var(--standard_padding);
+  width: auto;
+}
+
+#home:hover,
+#home:focus,
+#today:hover,
+#today:focus,
+#week:hover,
+#week:focus,
+#projects:hover,
+#projects:focus {
+  font-size: 2rem;
+  border: none;
+  border-bottom: 2px solid var(--main_color);
+  color: var(--main_color);
+}
+
+#project_viewer {
+  padding-top: var(--large_padding);
+}
 #new_project_container {
   display: flex;
   justify-content: space-between;
@@ -137,6 +176,12 @@ body {
   border-bottom-right-radius: 3vw;
 }
 
+#current_display {
+  font-size: 2rem;
+  color: var(--fourth_color);
+  margin-bottom: var(--standard_padding);
+}
+
 #task_container {
   border: 2px solid var(--fourth_color);
   background-color: var(--secondary_color);
@@ -147,8 +192,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: var(--standard_padding);
-  padding-top: var(--large_padding);
+  padding: var(--large_padding);
 }
 
 #new_task_input {
