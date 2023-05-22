@@ -12,5 +12,44 @@
       rel="stylesheet"
     />
   </head>
-  <body></body>
+  <body>
+    <div id="header_container">
+      <img id="logo" src="NPC_logo.png" />
+      <div id="right_container">
+        <h2 id="greeting">Hello Joshua</h2>
+        <button id="sign_out">Sign Out</button>
+      </div>
+    </div>
+    <div id="main_container">
+      <div id="left_nav">
+        <div id="new_project_container">
+          <input type="text" id="new_project" placeholder="New Project Name" />
+          <button id="submit_new_project">Create</button>
+        </div>
+        <div id="project_list"></div>
+      </div>
+      <div id="main_display">
+        <div id="task_container">
+          <div id="new_task_input">
+            <input
+              type="text"
+              name="new_task"
+              id="new_task"
+              placeholder="New Task"
+            />
+            <input type="date" name="due_date" id="due_date" />
+            <select name="urgency" id="urgency">
+              <option value="urgent">Urgent</option>
+              <option value="moderate">Moderate</option>
+              <option value="not_urgent">Not Urgent</option>
+            </select>
+            <button id="submit_task">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer_container">
+      <p id="footer">Made by ME!</p>
+    </div>
+  </body>
 </html>
