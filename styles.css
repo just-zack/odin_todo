@@ -1,0 +1,56 @@
+* {
+  --main_font: "Bungee";
+  --main_color: #e63946;
+  --secondary_color: #f1faee;
+  --tertiary_color: #a8dadc;
+  --standard_padding: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main_color);
+}
+
+#header_container {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--standard_padding);
+  background-color: var(--main_color);
+  font-family: var(--main_font);
+}
+
+#right_container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+#logo {
+  height: 60px;
+}
+
+#main_container {
+  display: flex;
+}
+
+#left_nav {
+  background-color: var(--tertiary_color);
+  height: 85vh;
+  width: 30vw;
+  border-top-left-radius: 5vw;
+}
+
+#main_display {
+  background-color: var(--secondary_color);
+  height: 85vh;
+  width: 70vw;
+}
+
+#footer_container {
+  background-color: var(--main_color);
+  width: 100vw;
+  height: 5vh;
+}
