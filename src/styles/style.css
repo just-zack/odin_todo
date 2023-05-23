@@ -65,7 +65,7 @@ body {
   background-color: var(--secondary_color);
   width: 30vw;
   height: 100;
-  flex: auto;
+  flex-grow: 1;
   border-top-left-radius: 3vw;
   padding: var(--large_padding);
   gap: var(--standard_padding);
@@ -80,6 +80,11 @@ body {
   align-items: flex-start;
   padding: var(--large_padding);
   flex: auto;
+  width: 650px;
+  border: 2px solid var(--fourth_color);
+  background-color: var(--secondary_color);
+  border-radius: 20px;
+  box-shadow: 1px 5px 15px;
 }
 
 #home,
@@ -161,14 +166,6 @@ body {
   border: 2px solid var(--fourth_color);
 }
 
-#project_list {
-  border: 2px solid var(--fourth_color);
-  background-color: var(--secondary_color);
-  border-radius: 20px;
-  box-shadow: 1px 5px 15px;
-  flex: auto;
-  align-self: stretch;
-}
 #main_display {
   background-color: var(--secondary_color);
   height: 100;
