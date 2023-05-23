@@ -91,6 +91,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-top: var(--standard_padding);
+  gap: 10px;
 }
 
 .project_title {
@@ -98,13 +99,28 @@ body {
   color: var(--fourth_color);
   border: none;
   background-color: var(--secondary_color);
+  text-align: start;
+}
+
+.project_title:hover,
+.project_title:focus {
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 2px solid var(--tertiary_color);
+  color: var(--tertiary_color);
 }
 
 .delete_project {
   width: 80px;
-  height: 30px;
+  height: 2.2rem;
   background-color: var(--secondary_color);
-  border-radius: 5px;
+  border-radius: 8px;
+}
+
+.delete_project:hover {
+  background-color: #ef233c;
+  color: var(--secondary_color);
+  border-color: #ef233c;
 }
 
 #project_submission {
@@ -115,13 +131,20 @@ body {
 }
 #home,
 #today,
-#week,
-#projects {
+#week {
   font-size: 1.5rem;
   width: 2vw;
   font-family: var(--main_font);
   border: none;
   background-color: var(--secondary_color);
+  color: var(--fourth_color);
+  padding-top: var(--standard_padding);
+  width: auto;
+}
+
+#projects {
+  font-size: 1.7rem;
+  font-family: var(--main_font);
   color: var(--fourth_color);
   padding-top: var(--standard_padding);
   width: auto;
@@ -137,9 +160,7 @@ body {
 #today:hover,
 #today:focus,
 #week:hover,
-#week:focus,
-#projects:hover,
-#projects:focus {
+#week:focus {
   font-size: 2rem;
   border: none;
   border-bottom: 2px solid var(--tertiary_color);
