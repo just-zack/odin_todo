@@ -86,6 +86,33 @@ body {
   box-shadow: 1px 5px 15px;
 }
 
+.project_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--standard_padding);
+}
+
+.project_title {
+  font-size: 1.5rem;
+  color: var(--fourth_color);
+  border: none;
+  background-color: var(--secondary_color);
+}
+
+.delete_project {
+  width: 80px;
+  height: 30px;
+  background-color: var(--secondary_color);
+  border-radius: 5px;
+}
+
+#project_submission {
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+  gap: var(--standard_padding);
+}
 #home,
 #today,
 #week,
@@ -121,12 +148,6 @@ body {
 
 #project_viewer {
   padding-top: var(--large_padding);
-}
-#new_project_container {
-  display: flex;
-  justify-content: space-between;
-  align-self: stretch;
-  gap: var(--standard_padding);
 }
 
 #new_project {

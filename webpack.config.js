@@ -7,6 +7,7 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.js",
+    project: "./src/projectHandler.js",
   },
   devtool: "inline-source-map",
   plugins: [
