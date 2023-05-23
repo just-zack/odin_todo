@@ -40,21 +40,33 @@
         </div>
       </div>
       <div id="main_display">
-        <div id="task_container">
-          <h2 id="current_display">Odin Project</h2>
-          <div id="new_task_input">
-            <input
-              type="text"
-              name="new_task"
-              id="new_task"
-              placeholder="New Task"
-            />
-            <input type="date" name="due_date" id="due_date" />
-            <select name="urgency" id="urgency">
-              <option value="urgent">Urgent</option>
-              <option value="moderate">Moderate</option>
-              <option value="not_urgent">Not Urgent</option>
-            </select>
+        <div id="task_content">
+          <h2 id="current_project">Home</h2>
+          <div id="create_new_task">
+            <div id="new_task_content">
+              <div id="new_task_row1">
+                <input
+                  type="text"
+                  name="new_task"
+                  id="new_task"
+                  placeholder="New Task"
+                />
+                <input type="date" name="due_date" id="due_date" />
+                <select name="urgency" id="urgency">
+                  <option value="urgent">Urgent</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="not_urgent">Not Urgent</option>
+                </select>
+              </div>
+              <div id="new_task_row2">
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Description"
+                />
+              </div>
+            </div>
             <button id="submit_task">+</button>
           </div>
         </div>
