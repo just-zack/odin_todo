@@ -80,7 +80,6 @@ body {
   align-items: flex-start;
   padding: var(--large_padding);
   flex: auto;
-  width: 650px;
   border: 2px solid var(--fourth_color);
   background-color: var(--secondary_color);
   border-radius: 20px;
