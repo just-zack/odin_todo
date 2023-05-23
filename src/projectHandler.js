@@ -24,12 +24,12 @@ function displayNewProject() {
   let deleteProject = document.createElement("button");
   let projectContainer = document.getElementById("project_viewer");
 
-  newProjectContainer.classList.add("project_card");
+  newProjectContainer.classList.add("project_card", getNewProjectName());
   projectContainer.appendChild(newProjectContainer);
-  newProjectName.classList.add("project_title");
+  newProjectName.classList.add("project_title", getNewProjectName());
   newProjectName.innerText = getNewProjectName();
   newProjectContainer.appendChild(newProjectName);
-  deleteProject.classList.add("delete_project");
+  deleteProject.classList.add("delete_project", getNewProjectName());
   deleteProject.innerText = "DELETE";
   newProjectContainer.appendChild(deleteProject);
 }
