@@ -34,6 +34,7 @@ function displayNewProject() {
   newProjectContainer.classList.add("project_card", projectName);
   projectContainer.appendChild(newProjectContainer);
   newProjectName.classList.add("project_title", projectName);
+  newProjectName.setAttribute("id", projectName + "_btn");
   newProjectName.innerText = getNewProjectName();
   newProjectContainer.appendChild(newProjectName);
   deleteProject.classList.add("delete_project");
@@ -44,16 +45,6 @@ function displayNewProject() {
 
 function overrideSubmit(event) {
   event.preventDefault();
-}
-
-function listenForDelete(value) {
-  let deleteButton = document.getElementById(value);
-  deleteButton.addEventListener("click", deleteExistingProject);
-
-  function deleteExistingProject(value) {
-    const deleteItems = document.querySelectorAll(value);
-    deleteItems.forEach((element) => element.remove());
-  }
 }
 
 function deleteProject(projectNameNoSpaces, projectName) {
@@ -76,6 +67,14 @@ function clearNewProjectFields() {
   newProjectName.value = "";
 }
 
+function changeProjectSelection(projectNameNoSpaces, projectName) {
+  const projectDisplay = document.getElementById("current_project");
+  const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
+  projectBtn.addEventListener("click", () => {
+    projectDisplay.innerText = projectName;
+  });
+}
+
 function logNewProject() {
   let projectName = getNewProjectName();
   let projectNameNoSpaces = getNewProjectNameNoSpaces();
@@ -84,6 +83,7 @@ function logNewProject() {
   createNewProject(projectName);
   displayNewProject();
   deleteProject(projectNameNoSpaces, projectName);
+  changeProjectSelection(projectNameNoSpaces, projectName);
   clearNewProjectFields();
   console.log(projectArray);
 }
