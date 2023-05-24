@@ -252,6 +252,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+#new_task_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--standard_padding);
+  padding-right: var(--standard_padding);
+}
 #new_task_row1 {
   display: flex;
   flex: auto;
