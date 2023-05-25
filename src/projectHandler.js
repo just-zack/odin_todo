@@ -1,7 +1,7 @@
 const createButton = document.getElementById("submit_new_project");
 createButton.addEventListener("click", logNewProject);
 let projectArray = [];
-import currentSelectedProject from "./globalVar.js";
+let currentSelectedProject;
 
 class Project {
   constructor(name) {
@@ -84,10 +84,6 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
   projectBtn.addEventListener("click", () => {
     changeSelectedProject(projectName);
   });
-}
-
-function displayProjectTasks() {
-  const taskContent = document.getElementById("task_content");
 }
 
 function logNewProject() {
