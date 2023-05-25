@@ -106,7 +106,9 @@ function setHome() {
   let homeBtn = document.getElementById("home");
   let home = new Project("home");
   projectArray.push(home);
-  homeBtn.addEventListener("click", changeSelectedProject("home"));
+  homeBtn.addEventListener("click", () => {
+    changeSelectedProject("home");
+  });
 }
 
 setHome();
