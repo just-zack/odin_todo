@@ -9,6 +9,7 @@ module.exports = {
     index: "./src/index.js",
     project: "./src/projectHandler.js",
     task: "./src/taskHandler.js",
+    globalVar: "./src/globalVar.js",
   },
   devtool: "inline-source-map",
   plugins: [

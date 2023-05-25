@@ -1,6 +1,6 @@
 const submitTask = document.getElementById("submit_task");
 submitTask.addEventListener("click", logNewTask);
-let taskArray = [];
+import currentSelectedProject from "./globalVar.js";
 
 class Task {
   constructor(name, date, urgency, description) {
@@ -42,9 +42,12 @@ function logNewTask() {
   let date = taskDate.value;
   let urgency = taskUrgency.value;
   let description = taskDescription.value;
+  let taskArray = currentSelectedProject.taskArray;
 
   overrideSubmit(event);
-  createNewTask(name, date, urgency, description);
+  console.log(currentSelectedProject);
+  taskArray.push(createNewTask(name, date, urgency, description));
   clearNewTaskFields();
   console.log(taskArray);
+  console.log(currentSelectedProject);
 }
