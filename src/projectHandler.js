@@ -1,6 +1,7 @@
 const createButton = document.getElementById("submit_new_project");
 createButton.addEventListener("click", logNewProject);
 let projectArray = [];
+let currentSelectedProject;
 
 class Project {
   constructor(name) {
@@ -67,11 +68,21 @@ function clearNewProjectFields() {
   newProjectName.value = "";
 }
 
-function changeProjectSelection(projectNameNoSpaces, projectName) {
+function changeSelectedProject(projectName) {
   const projectDisplay = document.getElementById("current_project");
+  projectDisplay.innerText = projectName;
+  for (let i = 0; i < projectArray.length; i++) {
+    if (projectArray[i].name === projectName) {
+      currentSelectedProject = projectArray[i];
+    }
+  }
+  console.log(currentSelectedProject);
+}
+
+function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
   const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
   projectBtn.addEventListener("click", () => {
-    projectDisplay.innerText = projectName;
+    changeSelectedProject(projectName);
   });
 }
 
@@ -87,7 +98,15 @@ function logNewProject() {
   createNewProject(projectName);
   displayNewProject();
   deleteProject(projectNameNoSpaces, projectName);
-  changeProjectSelection(projectNameNoSpaces, projectName);
+  addProjectSelectionEventListener(projectNameNoSpaces, projectName);
   clearNewProjectFields();
   console.log(projectArray);
 }
+function setHome() {
+  let homeBtn = document.getElementById("home");
+  let home = new Project("home");
+  projectArray.push(home);
+  homeBtn.addEventListener("click", changeSelectedProject("home"));
+}
+
+setHome();
