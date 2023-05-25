@@ -56,7 +56,8 @@ body {
 }
 
 #main_container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   flex: auto;
   height: 100;
 }
@@ -65,13 +66,14 @@ body {
   background-color: var(--secondary_color);
   width: 30vw;
   height: 100;
-  flex-grow: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
   border-top-left-radius: 3vw;
-  padding: var(--large_padding);
+  padding: var(--standard_padding);
   gap: var(--standard_padding);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #project_list {
@@ -211,12 +213,14 @@ body {
   background-color: var(--secondary_color);
   height: 100;
   width: 100;
+  grid-column-start: 2;
+  grid-column-end: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: var(--large_padding);
+  align-items: flex-start;
   border-bottom-right-radius: 3vw;
+  padding: var(--standard_padding);
 }
 
 #current_project {

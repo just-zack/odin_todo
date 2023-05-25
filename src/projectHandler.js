@@ -75,6 +75,10 @@ function changeProjectSelection(projectNameNoSpaces, projectName) {
   });
 }
 
+function displayProjectTasks() {
+  const taskContent = document.getElementById("task_content");
+}
+
 function logNewProject() {
   let projectName = getNewProjectName();
   let projectNameNoSpaces = getNewProjectNameNoSpaces();
