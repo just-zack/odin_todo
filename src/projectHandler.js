@@ -101,6 +101,13 @@ function logNewProject() {
 }
 function setHome() {
   let homeBtn = document.getElementById("home");
+  let taskContainer = document.getElementById("task_content");
+  let homeTaskContainer = document.createElement("div");
+
+  homeTaskContainer.setAttribute("id", "home_container");
+  homeTaskContainer.classList.add("project_tasks");
+  taskContainer.appendChild(homeTaskContainer);
+
   let home = new Project("home");
   projectArray.push(home);
   currentSelectedProject = projectArray[0];
@@ -140,5 +147,3 @@ export default {
   getCSP,
   getSPA,
 };
-
-setHome();

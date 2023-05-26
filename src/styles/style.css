@@ -112,14 +112,16 @@ body {
   color: var(--tertiary_color);
 }
 
-.delete_project {
+.delete_project,
+.delete_task {
   width: 80px;
   height: 2.2rem;
   background-color: var(--secondary_color);
   border-radius: 8px;
 }
 
-.delete_project:hover {
+.delete_project:hover,
+.delete_task:hover {
   background-color: #ef233c;
   color: var(--secondary_color);
   border-color: #ef233c;
@@ -269,6 +271,39 @@ body {
   flex: auto;
   align-items: flex-start;
   justify-content: space-between;
+  gap: var(--standard_padding);
+}
+
+.project_tasks {
+  background-color: var(--main_color);
+  border-radius: 20px;
+  margin-top: var(--standard_padding);
+}
+
+.task_card {
+  display: flex;
+  width: 100;
+  justify-content: space-between;
+  gap: var(--standard_padding);
+  align-items: center;
+  padding: var(--large_padding);
+  color: var(--fourth_color);
+}
+
+.done_btn {
+  width: 15px;
+  height: 15px;
+  background-color: var(--secondary_color);
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--secondary_color);
+  opacity: 0.5;
+}
+
+.task_row {
+  display: flex;
   gap: var(--standard_padding);
 }
 

@@ -4,6 +4,8 @@ import projectFunctions from "./projectHandler.js";
 import taskFunctions from "./taskHandler.js";
 let currentTaskCopy;
 
+projectFunctions.setHome();
+
 const createButton = document.getElementById("submit_new_project");
 createButton.addEventListener("click", () => {
   projectFunctions.logNewProject();
@@ -16,7 +18,9 @@ submitTask.addEventListener("click", () => {
   taskFunctions.logNewTask();
   projectFunctions.pushArray(taskFunctions.getCurrentTask());
   console.log(projectFunctions.getSPA());
-  taskFunctions.createTaskCard();
+  const homeContainer = document.getElementById("home_container");
+  let taskCard = taskFunctions.createTaskCard();
+  homeContainer.appendChild(taskCard);
 });
 
 // call a taskFunction that uses projectFunctions.currentSelectedProject

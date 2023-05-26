@@ -53,29 +53,54 @@ function getCurrentTask() {
 }
 
 function createTaskCard() {
-  const taskContainer = document.getElementById("task_content");
   const taskCard = document.createElement("div");
+  const taskContent = document.createElement("div");
   const taskRow1 = document.createElement("div");
   const taskRow2 = document.createElement("div");
   const taskName = document.createElement("h3");
   const taskDate = document.createElement("h3");
   const taskUrgency = document.createElement("h3");
   const taskDescription = document.createElement("h3");
+  const doneBtn = document.createElement("button");
+  const deleteButton = document.createElement("button");
 
-  taskContainer.appendChild(taskCard);
+  taskCard.setAttribute("id", "t_" + currentTask.name);
+  taskCard.classList.add("task_card");
+  taskContent.classList.add("task_content");
+  doneBtn.classList.add("done_btn");
+  taskCard.appendChild(doneBtn);
+  taskCard.appendChild(taskName);
   taskCard.appendChild(taskRow1);
-  taskName.innerText = currentTask.name;
-  taskRow1.appendChild(taskName);
-  taskDate.innerText = currentTask.date;
+  doneBtn.addEventListener("click", () => {
+    taskName.classList.toggle("done");
+  });
+
+  taskCard.appendChild(taskContent);
+  taskRow1.classList.add("task_row");
+  taskRow2.classList.add("task_row");
+  taskName.innerText = "Task: " + currentTask.name;
+  taskDate.innerText = "Due Date: " + currentTask.date;
+  taskDate.style.color = "#2ec4b6";
   taskRow1.appendChild(taskDate);
+  taskContent.appendChild(taskRow1);
   taskUrgency.innerText = currentTask.urgency;
   taskRow1.appendChild(taskUrgency);
-  taskCard.appendChild(taskRow2);
-  taskDescription.innerText = currentTask.description;
+  taskContent.appendChild(taskRow2);
+  taskDescription.innerText = "Description: " + currentTask.description;
   taskRow2.appendChild(taskDescription);
-  console.log(typeof currentTask.date);
-  console.log(typeof currentTask.urgency);
-  console.log(typeof "hello");
+
+  deleteButton.innerText = "Delete";
+  deleteButton.classList.add("delete_task");
+  taskCard.appendChild(deleteButton);
+  deleteButton.addEventListener("click", () => {
+    taskCard.remove();
+  });
+
+  return taskCard;
+}
+
+function deleteTask() {
+  alert("what?!");
 }
 
 export default {
