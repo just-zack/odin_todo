@@ -62,7 +62,6 @@ function createTaskCard() {
   const taskUrgency = document.createElement("h3");
   const taskDescription = document.createElement("h3");
   const doneBtn = document.createElement("button");
-  const deleteButton = document.createElement("button");
 
   taskCard.setAttribute("id", "t_" + currentTask.name);
   taskCard.classList.add("task_card");
@@ -80,7 +79,7 @@ function createTaskCard() {
   taskRow2.classList.add("task_row");
   taskName.innerText = "Task: " + currentTask.name;
   taskDate.innerText = "Due Date: " + currentTask.date;
-  taskDate.style.color = "#2ec4b6";
+  taskDate.style.color = "#2ec4b6git p";
   taskRow1.appendChild(taskDate);
   taskContent.appendChild(taskRow1);
   taskUrgency.innerText = currentTask.urgency;
@@ -88,13 +87,6 @@ function createTaskCard() {
   taskContent.appendChild(taskRow2);
   taskDescription.innerText = "Description: " + currentTask.description;
   taskRow2.appendChild(taskDescription);
-
-  deleteButton.innerText = "Delete";
-  deleteButton.classList.add("delete_task");
-  taskCard.appendChild(deleteButton);
-  deleteButton.addEventListener("click", () => {
-    taskCard.remove();
-  });
 
   return taskCard;
 }

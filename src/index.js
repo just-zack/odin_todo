@@ -20,7 +20,15 @@ submitTask.addEventListener("click", () => {
   console.log(projectFunctions.getSPA());
   const homeContainer = document.getElementById("home_container");
   let taskCard = taskFunctions.createTaskCard();
+  const deleteButton = document.createElement("button");
   homeContainer.appendChild(taskCard);
+
+  deleteButton.innerText = "Delete";
+  deleteButton.classList.add("delete_task");
+  taskCard.appendChild(deleteButton);
+  deleteButton.addEventListener("click", () => {
+    taskCard.remove();
+  });
 });
 
 // call a taskFunction that uses projectFunctions.currentSelectedProject
