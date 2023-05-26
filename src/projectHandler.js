@@ -84,7 +84,19 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
   const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
   projectBtn.addEventListener("click", () => {
     changeSelectedProject(projectName);
+    replaceTaskContainer(projectNameNoSpaces);
   });
+}
+
+function replaceTaskContainer(projectNameNoSpaces) {
+  const currentTaskContainer = document.querySelector(".project_tasks");
+  currentTaskContainer.remove();
+
+  const newTaskContainer = document.createElement("div");
+  const taskContent = document.getElementById("task_content");
+  newTaskContainer.setAttribute("id", projectNameNoSpaces + "_container");
+  newTaskContainer.classList.add("project_tasks");
+  taskContent.appendChild(newTaskContainer);
 }
 
 function logNewProject() {
