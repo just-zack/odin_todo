@@ -16,6 +16,7 @@ submitTask.addEventListener("click", () => {
   taskFunctions.logNewTask();
   projectFunctions.pushArray(taskFunctions.getCurrentTask());
   console.log(projectFunctions.getSPA());
+  taskFunctions.createTaskCard();
 });
 
 // call a taskFunction that uses projectFunctions.currentSelectedProject

@@ -52,6 +52,29 @@ function getCurrentTask() {
   return currentTask;
 }
 
+function createTaskCard() {
+  const taskContainer = document.getElementById("create_new_task");
+  const taskCard = document.createElement("div");
+  const taskRow1 = document.createElement("div");
+  const taskRow2 = document.createElement("div");
+  const taskName = document.createElement("h3");
+  const taskDate = document.createElement("h3");
+  const taskUrgency = document.createElement("h3");
+  const taskDescription = document.createElement("h3");
+
+  taskContainer.appendChild(taskCard);
+  taskCard.appendChild(taskRow1);
+  taskName.innerText = currentTask.name;
+  taskRow1.appendChild(taskName);
+  taskDate.innerText = currentTask.date;
+  taskRow1.appendChild(taskDate);
+  taskUrgency.innerText = currentTask.urgency;
+  taskRow1.appendChild(taskUrgency);
+  taskCard.appendChild(taskRow2);
+  taskDescription.innerText = currentTask.description;
+  taskRow2.appendChild(taskDescription);
+}
+
 export default {
   Task,
   createNewTask,
@@ -61,4 +84,5 @@ export default {
   clearNewTaskFields,
   logNewTask,
   getCurrentTask,
+  createTaskCard,
 };
