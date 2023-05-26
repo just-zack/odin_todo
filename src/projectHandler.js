@@ -126,6 +126,7 @@ function setHome() {
   selectedProjectArray = projectArray[0].taskArray;
   homeBtn.addEventListener("click", () => {
     changeSelectedProject("home");
+    replaceTaskContainer("home");
   });
 }
 
