@@ -1,6 +1,4 @@
-const submitTask = document.getElementById("submit_task");
-submitTask.addEventListener("click", logNewTask);
-import currentSelectedProject from "./globalVar.js";
+let currentTask;
 
 class Task {
   constructor(name, date, urgency, description) {
@@ -12,7 +10,7 @@ class Task {
 }
 
 function createNewTask(name, date, urgency, description) {
-  taskArray.push(new Task(name, date, urgency, description));
+  currentTask = new Task(name, date, urgency, description);
 }
 
 function overrideSubmit(event) {
@@ -42,12 +40,25 @@ function logNewTask() {
   let date = taskDate.value;
   let urgency = taskUrgency.value;
   let description = taskDescription.value;
-  let taskArray = currentSelectedProject.taskArray;
 
   overrideSubmit(event);
-  console.log(currentSelectedProject);
-  taskArray.push(createNewTask(name, date, urgency, description));
+  createNewTask(name, date, urgency, description);
+  console.log(currentTask);
   clearNewTaskFields();
-  console.log(taskArray);
-  console.log(currentSelectedProject);
 }
+
+function getCurrentTask() {
+  console.log(currentTask);
+  return currentTask;
+}
+
+export default {
+  Task,
+  createNewTask,
+  overrideSubmit,
+  getNewTaskName,
+  getNewTaskNameNoSpaces,
+  clearNewTaskFields,
+  logNewTask,
+  getCurrentTask,
+};

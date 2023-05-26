@@ -1,7 +1,6 @@
-const createButton = document.getElementById("submit_new_project");
-createButton.addEventListener("click", logNewProject);
 let projectArray = [];
 let currentSelectedProject;
+let selectedProjectArray;
 
 class Project {
   constructor(name) {
@@ -74,9 +73,11 @@ function changeSelectedProject(projectName) {
   for (let i = 0; i < projectArray.length; i++) {
     if (projectArray[i].name === projectName) {
       currentSelectedProject = projectArray[i];
+      selectedProjectArray = projectArray[i].taskArray;
     }
   }
   console.log(currentSelectedProject);
+  console.log(selectedProjectArray);
 }
 
 function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
@@ -107,5 +108,36 @@ function setHome() {
     changeSelectedProject("home");
   });
 }
+
+function pushArray(addedTask) {
+  currentSelectedProject.taskArray.push(addedTask);
+  return console.log(currentSelectedProject);
+}
+
+function getCSP() {
+  return currentSelectedProject;
+}
+
+function getSPA() {
+  return selectedProjectArray;
+}
+
+export default {
+  Project,
+  getNewProjectName,
+  getNewProjectNameNoSpaces,
+  createNewProject,
+  displayNewProject,
+  overrideSubmit,
+  deleteProject,
+  clearNewProjectFields,
+  changeSelectedProject,
+  addProjectSelectionEventListener,
+  logNewProject,
+  setHome,
+  pushArray,
+  getCSP,
+  getSPA,
+};
 
 setHome();

@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { Script } = require("vm");
-const { type } = require("os");
+//const { Script } = require("vm");
+//const { type } = require("os");
 
 module.exports = {
   mode: "development",
@@ -9,7 +9,6 @@ module.exports = {
     index: "./src/index.js",
     project: "./src/projectHandler.js",
     task: "./src/taskHandler.js",
-    globalVar: "./src/globalVar.js",
   },
   devtool: "inline-source-map",
   plugins: [
