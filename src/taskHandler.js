@@ -53,7 +53,7 @@ function getCurrentTask() {
 }
 
 function createTaskCard() {
-  const taskContainer = document.getElementById("create_new_task");
+  const taskContainer = document.getElementById("task_content");
   const taskCard = document.createElement("div");
   const taskRow1 = document.createElement("div");
   const taskRow2 = document.createElement("div");
@@ -73,6 +73,9 @@ function createTaskCard() {
   taskCard.appendChild(taskRow2);
   taskDescription.innerText = currentTask.description;
   taskRow2.appendChild(taskDescription);
+  console.log(typeof currentTask.date);
+  console.log(typeof currentTask.urgency);
+  console.log(typeof "hello");
 }
 
 export default {

@@ -104,6 +104,7 @@ function setHome() {
   let home = new Project("home");
   projectArray.push(home);
   currentSelectedProject = projectArray[0];
+  selectedProjectArray = projectArray[0].taskArray;
   homeBtn.addEventListener("click", () => {
     changeSelectedProject("home");
   });
