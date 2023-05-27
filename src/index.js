@@ -60,7 +60,8 @@ submitTask.addEventListener("click", () => {
   }
   displayFunctions.displayTasksByProject(
     projectFunctions.getSPA(),
-    projectFunctions.getCurrentNameNoSpace()
+    projectFunctions.getCurrentNameNoSpace(),
+    projectFunctions.getHome()
   );
 });
 
@@ -71,7 +72,8 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
     displayFunctions.replaceTaskContainer(projectNameNoSpaces);
     displayFunctions.displayTasksByProject(
       projectFunctions.getSPA(),
-      projectNameNoSpaces
+      projectNameNoSpaces,
+      projectFunctions.getHome()
     );
   });
 }

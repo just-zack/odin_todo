@@ -1,4 +1,4 @@
-function createTaskCard(currentTask, projectArray) {
+function createTaskCard(currentTask, projectArray, homeArray) {
   const taskCard = document.createElement("div");
   const taskContent = document.createElement("div");
   const taskRow1 = document.createElement("div");
@@ -47,7 +47,13 @@ function createTaskCard(currentTask, projectArray) {
         projectArray.splice(i, 1);
       }
     }
+    for (let i = 0; i < homeArray.taskArray.length; i++) {
+      if (homeArray.taskArray[i] === currentTask) {
+        homeArray.taskArray.splice(i, 1);
+      }
+    }
     console.log("fire");
+    console.log(homeArray.taskArray);
     console.log(projectArray);
     console.log(currentTask);
   });
@@ -67,14 +73,18 @@ deleteButton.classList.add("delete_task");
 taskCard.appendChild(deleteButton);
 }
 */
-function displayTasksByProject(projectArray, currentProjectNameNoSpaces) {
+function displayTasksByProject(
+  projectArray,
+  currentProjectNameNoSpaces,
+  homeArray
+) {
   let taskCard;
   clearTaskDisplay(currentProjectNameNoSpaces);
   const currentContainer = document.getElementById(
     currentProjectNameNoSpaces + "_container"
   );
   for (let i = 0; i < projectArray.length; i++) {
-    taskCard = createTaskCard(projectArray[i], projectArray);
+    taskCard = createTaskCard(projectArray[i], projectArray, homeArray);
     currentContainer.appendChild(taskCard);
   }
 }
