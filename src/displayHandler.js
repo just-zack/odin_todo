@@ -37,21 +37,51 @@ function createTaskCard(currentTask) {
   return taskCard;
 }
 
-function displayTaskSubmit(value, currentTask) {
-  const currentContainer = document.getElementById(value + "_container");
-  let taskCard = createTaskCard(currentTask);
-  const deleteButton = document.createElement("button");
-  currentContainer.appendChild(taskCard);
+/*function displayTaskSubmit(value, currentTask, currentTaskNoSpaces) {
+const currentContainer = document.getElementById(value + "_container");
+let taskCard = createTaskCard(currentTask);
+const deleteButton = document.createElement("button");
+currentContainer.appendChild(taskCard);
 
-  deleteButton.innerText = "Delete";
-  deleteButton.classList.add("delete_task");
-  taskCard.appendChild(deleteButton);
-  deleteButton.addEventListener("click", () => {
-    taskCard.remove();
-  });
+deleteButton.innerText = "Delete";
+deleteButton.setAttribute("id", currentTaskNoSpaces + "_delete");
+deleteButton.classList.add("delete_task");
+taskCard.appendChild(deleteButton);
+}
+*/
+function displayTasksByProject(
+  project,
+  currentProjectNameNoSpaces,
+  projectArray
+) {
+  console.log("hello");
+  let taskCard;
+  clearTaskDisplay(currentProjectNameNoSpaces);
+  const currentContainer = document.getElementById(
+    currentProjectNameNoSpaces + "_container"
+  );
+  for (let i = 0; i < projectArray.length(); i++) {
+    taskCard = createTaskCard(projectArray[i]);
+    currentContainer.appendChild(taskCard);
+  }
+}
+
+function clearTaskDisplay(currentProjectNameNoSpaces) {
+  const currentContainer = document.getElementById(
+    currentProjectNameNoSpaces + "_container"
+  );
+  currentContainer.remove();
+  const newTaskContainer = document.createElement("div");
+  const taskContent = document.getElementById("task_content");
+  newTaskContainer.setAttribute(
+    "id",
+    currentProjectNameNoSpaces + "_container"
+  );
+  newTaskContainer.classList.add("project_tasks");
+  taskContent.appendChild(newTaskContainer);
 }
 
 export default {
   createTaskCard,
-  displayTaskSubmit,
+  displayTasksByProject,
 };

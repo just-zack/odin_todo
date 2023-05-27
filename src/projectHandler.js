@@ -81,7 +81,7 @@ function changeSelectedProject(projectName) {
   console.log(currentSelectedProject);
   console.log(selectedProjectArray);
 }
-
+/*
 function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
   const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
   projectBtn.addEventListener("click", () => {
@@ -89,6 +89,7 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
     replaceTaskContainer(projectNameNoSpaces);
   });
 }
+*/
 
 function replaceTaskContainer(projectNameNoSpaces) {
   const currentTaskContainer = document.querySelector(".project_tasks");
@@ -109,8 +110,6 @@ function logNewProject() {
   createNewProject(projectName);
   displayNewProject();
   deleteProject(projectNameNoSpaces, projectName);
-  addProjectSelectionEventListener(projectNameNoSpaces, projectName);
-  clearNewProjectFields();
   console.log(projectArray);
 }
 function setHome() {
@@ -160,11 +159,11 @@ export default {
   deleteProject,
   clearNewProjectFields,
   changeSelectedProject,
-  addProjectSelectionEventListener,
   logNewProject,
   setHome,
   pushArray,
   getCSP,
   getCurrentNameNoSpace,
   getSPA,
+  replaceTaskContainer,
 };
