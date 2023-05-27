@@ -1,4 +1,4 @@
-function createTaskCard(currentTask) {
+function createTaskCard(currentTask, projectArray) {
   const taskCard = document.createElement("div");
   const taskContent = document.createElement("div");
   const taskRow1 = document.createElement("div");
@@ -42,6 +42,14 @@ function createTaskCard(currentTask) {
   taskCard.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
     taskCard.remove();
+    for (let i = 0; i < projectArray.length; i++) {
+      if (projectArray[i] === currentTask) {
+        projectArray.splice(i, 1);
+      }
+    }
+    console.log("fire");
+    console.log(projectArray);
+    console.log(currentTask);
   });
 
   return taskCard;
@@ -66,7 +74,7 @@ function displayTasksByProject(projectArray, currentProjectNameNoSpaces) {
     currentProjectNameNoSpaces + "_container"
   );
   for (let i = 0; i < projectArray.length; i++) {
-    taskCard = createTaskCard(projectArray[i]);
+    taskCard = createTaskCard(projectArray[i], projectArray);
     currentContainer.appendChild(taskCard);
   }
 }
