@@ -43,12 +43,10 @@ function logNewTask() {
 
   overrideSubmit(event);
   createNewTask(name, date, urgency, description);
-  console.log(currentTask);
   clearNewTaskFields();
 }
 
 function getCurrentTask() {
-  console.log(currentTask);
   return currentTask;
 }
 
