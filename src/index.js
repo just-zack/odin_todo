@@ -26,30 +26,6 @@ createButton.addEventListener("click", () => {
   projectFunctions.clearNewProjectFields();
 });
 
-/*
-const submitTask = document.getElementById("submit_task");
-submitTask.addEventListener("click", () => {
-  taskFunctions.logNewTask();
-  projectFunctions.pushArray(taskFunctions.getCurrentTask());
-  console.log(projectFunctions.getSPA());
-  console.log(projectFunctions.getCurrentNameNoSpace());
-  console.log(taskFunctions.getCurrentTask());
-  let taskName = taskFunctions.getCurrentTask();
-  displayFunctions.displayTaskSubmit(
-    projectFunctions.getCurrentNameNoSpace(),
-    taskName,
-    taskFunctions.getNewTaskNameNoSpaces()
-  );
-  const deleteTaskBtn = document.getElementById(
-    taskFunctions.getNewTaskNameNoSpaces() + "_delete"
-  );
-  const taskCard = document.getElementById("t_" + taskName.name);
-  deleteTaskBtn.addEventListener("click", () => {
-    taskCard.remove();
-  });
-});
-*/
-
 const submitTask = document.getElementById("submit_task");
 submitTask.addEventListener("click", () => {
   taskFunctions.logNewTask();
@@ -78,20 +54,3 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
     );
   });
 }
-
-function deleteTaskFromArray(taskName) {
-  console.log(projectFunctions.getCSP());
-  let taskArray = projectFunctions.getCSP().taskArray;
-
-  console.log(taskArray);
-  for (let i = 0; i < taskArray.length; i++) {
-    let myTaskTitle = taskArray[i].name;
-    myTaskTitle = myTaskTitle.replace(/\s+/g, "");
-    if (myTaskTitle === taskName) {
-      taskArray.splice(i, 1);
-    }
-    console.log(taskArray);
-  }
-}
-
-// call a taskFunction that uses projectFunctions.currentSelectedProject

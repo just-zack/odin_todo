@@ -74,18 +74,7 @@ function removeTaskFromArray(currentTask, currentProject, homeProject) {
   console.log(currentProject);
   console.log(currentTask);
 }
-/*function displayTaskSubmit(value, currentTask, currentTaskNoSpaces) {
-const currentContainer = document.getElementById(value + "_container");
-let taskCard = createTaskCard(currentTask);
-const deleteButton = document.createElement("button");
-currentContainer.appendChild(taskCard);
 
-deleteButton.innerText = "Delete";
-deleteButton.setAttribute("id", currentTaskNoSpaces + "_delete");
-deleteButton.classList.add("delete_task");
-taskCard.appendChild(deleteButton);
-}
-*/
 function displayTasksByProject(
   currentProject,
   currentProjectNameNoSpaces,
