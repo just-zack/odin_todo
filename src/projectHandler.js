@@ -1,5 +1,6 @@
 let projectArray = [];
 let currentSelectedProject;
+let currentProjectNameNoSpace;
 let selectedProjectArray;
 
 class Project {
@@ -74,6 +75,7 @@ function changeSelectedProject(projectName) {
     if (projectArray[i].name === projectName) {
       currentSelectedProject = projectArray[i];
       selectedProjectArray = projectArray[i].taskArray;
+      currentProjectNameNoSpace = projectArray[i].name.split(" ").join("");
     }
   }
   console.log(currentSelectedProject);
@@ -124,6 +126,7 @@ function setHome() {
   projectArray.push(home);
   currentSelectedProject = projectArray[0];
   selectedProjectArray = projectArray[0].taskArray;
+  currentProjectNameNoSpace = "home";
   homeBtn.addEventListener("click", () => {
     changeSelectedProject("home");
     replaceTaskContainer("home");
@@ -137,6 +140,10 @@ function pushArray(addedTask) {
 
 function getCSP() {
   return currentSelectedProject;
+}
+
+function getCurrentNameNoSpace() {
+  return currentProjectNameNoSpace;
 }
 
 function getSPA() {
@@ -158,5 +165,6 @@ export default {
   setHome,
   pushArray,
   getCSP,
+  getCurrentNameNoSpace,
   getSPA,
 };

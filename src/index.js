@@ -2,6 +2,7 @@ import "./styles/style.css";
 import "../src/content/NPC_logo.png";
 import projectFunctions from "./projectHandler.js";
 import taskFunctions from "./taskHandler.js";
+import displayFunctions from "./displayHandler.js";
 let currentTaskCopy;
 
 projectFunctions.setHome();
@@ -18,17 +19,12 @@ submitTask.addEventListener("click", () => {
   taskFunctions.logNewTask();
   projectFunctions.pushArray(taskFunctions.getCurrentTask());
   console.log(projectFunctions.getSPA());
-  const homeContainer = document.getElementById("home_container");
-  let taskCard = taskFunctions.createTaskCard();
-  const deleteButton = document.createElement("button");
-  homeContainer.appendChild(taskCard);
-
-  deleteButton.innerText = "Delete";
-  deleteButton.classList.add("delete_task");
-  taskCard.appendChild(deleteButton);
-  deleteButton.addEventListener("click", () => {
-    taskCard.remove();
-  });
+  console.log(projectFunctions.getCurrentNameNoSpace());
+  console.log(taskFunctions.getCurrentTask());
+  displayFunctions.displayTaskSubmit(
+    projectFunctions.getCurrentNameNoSpace(),
+    taskFunctions.getCurrentTask()
+  );
 });
 
 // call a taskFunction that uses projectFunctions.currentSelectedProject
