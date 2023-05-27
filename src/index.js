@@ -10,8 +10,9 @@ homeBtn.addEventListener("click", () => {
   projectFunctions.changeSelectedProject("home");
   displayFunctions.replaceTaskContainer("home");
   displayFunctions.displayTasksByProject(
-    projectFunctions.getHome().taskArray,
-    "home"
+    projectFunctions.getHome(),
+    "home",
+    projectFunctions.getHome()
   );
 });
 
@@ -59,7 +60,7 @@ submitTask.addEventListener("click", () => {
     projectFunctions.pushHomeArray(taskFunctions.getCurrentTask());
   }
   displayFunctions.displayTasksByProject(
-    projectFunctions.getSPA(),
+    projectFunctions.getCSP(),
     projectFunctions.getCurrentNameNoSpace(),
     projectFunctions.getHome()
   );
@@ -71,7 +72,7 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
     projectFunctions.changeSelectedProject(projectName);
     displayFunctions.replaceTaskContainer(projectNameNoSpaces);
     displayFunctions.displayTasksByProject(
-      projectFunctions.getSPA(),
+      projectFunctions.getCSP(),
       projectNameNoSpaces,
       projectFunctions.getHome()
     );

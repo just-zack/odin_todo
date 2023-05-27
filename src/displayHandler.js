@@ -1,4 +1,4 @@
-function createTaskCard(currentTask, projectArray, homeArray) {
+function createTaskCard(currentTask, currentProject, homeProject) {
   const taskCard = document.createElement("div");
   const taskContent = document.createElement("div");
   const taskRow1 = document.createElement("div");
@@ -42,25 +42,38 @@ function createTaskCard(currentTask, projectArray, homeArray) {
   taskCard.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
     taskCard.remove();
-    for (let i = 0; i < projectArray.length; i++) {
-      if (projectArray[i] === currentTask) {
-        projectArray.splice(i, 1);
-      }
-    }
-    for (let i = 0; i < homeArray.taskArray.length; i++) {
-      if (homeArray.taskArray[i] === currentTask) {
-        homeArray.taskArray.splice(i, 1);
-      }
-    }
-    console.log("fire");
-    console.log(homeArray.taskArray);
-    console.log(projectArray);
-    console.log(currentTask);
+    console.log(homeProject);
+    removeTaskFromArray(currentTask, currentProject, homeProject);
   });
-
   return taskCard;
 }
 
+function removeTaskFromArray(currentTask, currentProject, homeProject) {
+  console.log(homeProject);
+  console.log(currentProject);
+  if (currentProject.name !== homeProject.name) {
+    for (let i = 0; i < currentProject.taskArray.length; i++) {
+      if (currentProject.taskArray[i] === currentTask) {
+        currentProject.taskArray.splice(i, 1);
+      }
+    }
+    for (let i = 0; i < homeProject.taskArray.length; i++) {
+      if (homeProject.taskArray[i] === currentTask) {
+        homeProject.taskArray.splice(i, 1);
+      }
+    }
+  } else {
+    for (let i = 0; i < homeProject.taskArray.length; i++) {
+      if (homeProject.taskArray[i] === currentTask) {
+        homeProject.taskArray.splice(i, 1);
+      }
+    }
+  }
+  console.log("fire");
+  console.log(homeProject);
+  console.log(currentProject);
+  console.log(currentTask);
+}
 /*function displayTaskSubmit(value, currentTask, currentTaskNoSpaces) {
 const currentContainer = document.getElementById(value + "_container");
 let taskCard = createTaskCard(currentTask);
@@ -74,17 +87,21 @@ taskCard.appendChild(deleteButton);
 }
 */
 function displayTasksByProject(
-  projectArray,
+  currentProject,
   currentProjectNameNoSpaces,
-  homeArray
+  homeProject
 ) {
   let taskCard;
   clearTaskDisplay(currentProjectNameNoSpaces);
   const currentContainer = document.getElementById(
     currentProjectNameNoSpaces + "_container"
   );
-  for (let i = 0; i < projectArray.length; i++) {
-    taskCard = createTaskCard(projectArray[i], projectArray, homeArray);
+  for (let i = 0; i < currentProject.taskArray.length; i++) {
+    taskCard = createTaskCard(
+      currentProject.taskArray[i],
+      currentProject,
+      homeProject
+    );
     currentContainer.appendChild(taskCard);
   }
 }
