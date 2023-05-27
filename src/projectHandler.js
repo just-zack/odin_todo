@@ -110,7 +110,6 @@ function logNewProject() {
   deleteProject(projectNameNoSpaces, projectName);
 }
 function setHome() {
-  let homeBtn = document.getElementById("home");
   let taskContainer = document.getElementById("task_content");
   let homeTaskContainer = document.createElement("div");
 
@@ -123,10 +122,6 @@ function setHome() {
   currentSelectedProject = projectArray[0];
   selectedProjectArray = projectArray[0].taskArray;
   currentProjectNameNoSpace = "home";
-  homeBtn.addEventListener("click", () => {
-    changeSelectedProject("home");
-    replaceTaskContainer("home");
-  });
 }
 
 function pushArray(addedTask) {
@@ -146,6 +141,10 @@ function getSPA() {
   return selectedProjectArray;
 }
 
+function getHome() {
+  return projectArray[0];
+}
+
 export default {
   Project,
   getNewProjectName,
@@ -163,4 +162,5 @@ export default {
   getCurrentNameNoSpace,
   getSPA,
   replaceTaskContainer,
+  getHome,
 };

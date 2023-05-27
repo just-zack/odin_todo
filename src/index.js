@@ -6,6 +6,15 @@ import displayFunctions from "./displayHandler.js";
 let currentTaskCopy;
 
 projectFunctions.setHome();
+let homeBtn = document.getElementById("home");
+homeBtn.addEventListener("click", () => {
+  projectFunctions.changeSelectedProject("home");
+  projectFunctions.replaceTaskContainer("home");
+  displayFunctions.displayTasksByProject(
+    projectFunctions.getHome().taskArray,
+    "home"
+  );
+});
 
 const createButton = document.getElementById("submit_new_project");
 createButton.addEventListener("click", () => {
