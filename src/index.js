@@ -10,12 +10,6 @@ projectFunctions.setHome();
 const createButton = document.getElementById("submit_new_project");
 createButton.addEventListener("click", () => {
   projectFunctions.logNewProject();
-
-  console.log(projectFunctions.getCSP());
-  console.log(projectFunctions.getSPA());
-  console.log(projectFunctions.getCurrentNameNoSpace());
-  console.log(projectFunctions.getNewProjectNameNoSpaces());
-  console.log(projectFunctions.getNewProjectName);
   addProjectSelectionEventListener(
     projectFunctions.getNewProjectNameNoSpaces(),
     projectFunctions.getNewProjectName(),
@@ -52,12 +46,8 @@ const submitTask = document.getElementById("submit_task");
 submitTask.addEventListener("click", () => {
   taskFunctions.logNewTask();
   projectFunctions.pushArray(taskFunctions.getCurrentTask());
-  console.log(projectFunctions.getSPA());
-  console.log(projectFunctions.getCurrentNameNoSpace());
-  console.log(taskFunctions.getCurrentTask());
-
   displayFunctions.displayTasksByProject(
-    projectFunctions.getCSP(),
+    projectFunctions.getSPA(),
     projectFunctions.getCurrentNameNoSpace()
   );
 });
@@ -67,12 +57,6 @@ function addProjectSelectionEventListener(
   projectName,
   projectArray
 ) {
-  console.log(projectNameNoSpaces);
-  console.log("break");
-  console.log(projectName);
-  console.log("batman");
-  console.log(projectArray);
-  console.log(projectArray.length);
   const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
   projectBtn.addEventListener("click", () => {
     projectFunctions.changeSelectedProject(projectName);

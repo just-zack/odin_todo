@@ -51,6 +51,7 @@ taskCard.appendChild(deleteButton);
 */
 function displayTasksByProject(projectArray, currentProjectNameNoSpaces) {
   console.log("why");
+  console.log(currentProjectNameNoSpaces);
   let taskCard;
   clearTaskDisplay(currentProjectNameNoSpaces);
   const currentContainer = document.getElementById(
