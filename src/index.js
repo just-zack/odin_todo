@@ -75,4 +75,20 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
     );
   });
 }
+
+function deleteTaskFromArray(taskName) {
+  console.log(projectFunctions.getCSP());
+  let taskArray = projectFunctions.getCSP().taskArray;
+
+  console.log(taskArray);
+  for (let i = 0; i < taskArray.length; i++) {
+    let myTaskTitle = taskArray[i].name;
+    myTaskTitle = myTaskTitle.replace(/\s+/g, "");
+    if (myTaskTitle === taskName) {
+      taskArray.splice(i, 1);
+    }
+    console.log(taskArray);
+  }
+}
+
 // call a taskFunction that uses projectFunctions.currentSelectedProject
