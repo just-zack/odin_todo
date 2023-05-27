@@ -3,7 +3,6 @@ import "../src/content/NPC_logo.png";
 import projectFunctions from "./projectHandler.js";
 import taskFunctions from "./taskHandler.js";
 import displayFunctions from "./displayHandler.js";
-let currentTaskCopy;
 
 projectFunctions.setHome();
 let homeBtn = document.getElementById("home");
@@ -54,7 +53,12 @@ submitTask.addEventListener("click", () => {
 const submitTask = document.getElementById("submit_task");
 submitTask.addEventListener("click", () => {
   taskFunctions.logNewTask();
-  projectFunctions.pushArray(taskFunctions.getCurrentTask());
+  if (projectFunctions.getCSP().name !== "home") {
+    projectFunctions.pushArray(taskFunctions.getCurrentTask());
+    projectFunctions.pushHomeArray(taskFunctions.getCurrentTask());
+  } else {
+    projectFunctions.pushHomeArray(taskFunctions.getCurrentTask());
+  }
   displayFunctions.displayTasksByProject(
     projectFunctions.getSPA(),
     projectFunctions.getCurrentNameNoSpace()

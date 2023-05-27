@@ -126,7 +126,9 @@ function setHome() {
 
 function pushArray(addedTask) {
   currentSelectedProject.taskArray.push(addedTask);
-  return console.log(currentSelectedProject);
+}
+function pushHomeArray(addedTask) {
+  projectArray[0].taskArray.push(addedTask);
 }
 
 function getCSP() {
@@ -158,6 +160,7 @@ export default {
   logNewProject,
   setHome,
   pushArray,
+  pushHomeArray,
   getCSP,
   getCurrentNameNoSpace,
   getSPA,
