@@ -19,7 +19,7 @@ createButton.addEventListener("click", () => {
   addProjectSelectionEventListener(
     projectFunctions.getNewProjectNameNoSpaces(),
     projectFunctions.getNewProjectName(),
-    projectFunctions.getSPA
+    projectFunctions.getSPA()
   );
   projectFunctions.clearNewProjectFields();
 });
@@ -70,14 +70,16 @@ function addProjectSelectionEventListener(
   console.log(projectNameNoSpaces);
   console.log("break");
   console.log(projectName);
+  console.log("batman");
+  console.log(projectArray);
+  console.log(projectArray.length);
   const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
   projectBtn.addEventListener("click", () => {
     projectFunctions.changeSelectedProject(projectName);
     projectFunctions.replaceTaskContainer(projectNameNoSpaces);
     displayFunctions.displayTasksByProject(
-      projectName,
-      projectNameNoSpaces,
-      projectArray
+      projectFunctions.getSPA(),
+      projectNameNoSpaces
     );
   });
 }

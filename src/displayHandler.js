@@ -49,18 +49,14 @@ deleteButton.classList.add("delete_task");
 taskCard.appendChild(deleteButton);
 }
 */
-function displayTasksByProject(
-  project,
-  currentProjectNameNoSpaces,
-  projectArray
-) {
-  console.log("hello");
+function displayTasksByProject(projectArray, currentProjectNameNoSpaces) {
+  console.log("why");
   let taskCard;
   clearTaskDisplay(currentProjectNameNoSpaces);
   const currentContainer = document.getElementById(
     currentProjectNameNoSpaces + "_container"
   );
-  for (let i = 0; i < projectArray.length(); i++) {
+  for (let i = 0; i < projectArray.length; i++) {
     taskCard = createTaskCard(projectArray[i]);
     currentContainer.appendChild(taskCard);
   }
