@@ -34,6 +34,16 @@ function createTaskCard(currentTask) {
   taskDescription.innerText = "Description: " + currentTask.description;
   taskRow2.appendChild(taskDescription);
 
+  const deleteButton = document.createElement("button");
+
+  deleteButton.innerText = "Delete";
+  deleteButton.setAttribute("id", currentTask.name + "_delete");
+  deleteButton.classList.add("delete_task");
+  taskCard.appendChild(deleteButton);
+  deleteButton.addEventListener("click", () => {
+    taskCard.remove();
+  });
+
   return taskCard;
 }
 
@@ -50,8 +60,6 @@ taskCard.appendChild(deleteButton);
 }
 */
 function displayTasksByProject(projectArray, currentProjectNameNoSpaces) {
-  console.log("why");
-  console.log(currentProjectNameNoSpaces);
   let taskCard;
   clearTaskDisplay(currentProjectNameNoSpaces);
   const currentContainer = document.getElementById(

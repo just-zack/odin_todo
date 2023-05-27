@@ -78,8 +78,6 @@ function changeSelectedProject(projectName) {
       currentProjectNameNoSpace = projectArray[i].name.split(" ").join("");
     }
   }
-  console.log(currentSelectedProject);
-  console.log(selectedProjectArray);
 }
 /*
 function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
@@ -110,7 +108,6 @@ function logNewProject() {
   createNewProject(projectName);
   displayNewProject();
   deleteProject(projectNameNoSpaces, projectName);
-  console.log(projectArray);
 }
 function setHome() {
   let homeBtn = document.getElementById("home");
