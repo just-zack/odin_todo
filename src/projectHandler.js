@@ -89,7 +89,7 @@ function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
 }
 */
 
-function replaceTaskContainer(projectNameNoSpaces) {
+/*function replaceTaskContainer(projectNameNoSpaces) {
   const currentTaskContainer = document.querySelector(".project_tasks");
   currentTaskContainer.remove();
 
@@ -99,6 +99,7 @@ function replaceTaskContainer(projectNameNoSpaces) {
   newTaskContainer.classList.add("project_tasks");
   taskContent.appendChild(newTaskContainer);
 }
+*/
 
 function logNewProject() {
   let projectName = getNewProjectName();
@@ -164,6 +165,5 @@ export default {
   getCSP,
   getCurrentNameNoSpace,
   getSPA,
-  replaceTaskContainer,
   getHome,
 };

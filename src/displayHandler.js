@@ -86,7 +86,19 @@ function clearTaskDisplay(currentProjectNameNoSpaces) {
   taskContent.appendChild(newTaskContainer);
 }
 
+function replaceTaskContainer(projectNameNoSpaces) {
+  const currentTaskContainer = document.querySelector(".project_tasks");
+  currentTaskContainer.remove();
+
+  const newTaskContainer = document.createElement("div");
+  const taskContent = document.getElementById("task_content");
+  newTaskContainer.setAttribute("id", projectNameNoSpaces + "_container");
+  newTaskContainer.classList.add("project_tasks");
+  taskContent.appendChild(newTaskContainer);
+}
+
 export default {
   createTaskCard,
   displayTasksByProject,
+  replaceTaskContainer,
 };

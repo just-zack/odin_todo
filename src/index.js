@@ -20,8 +20,7 @@ createButton.addEventListener("click", () => {
   projectFunctions.logNewProject();
   addProjectSelectionEventListener(
     projectFunctions.getNewProjectNameNoSpaces(),
-    projectFunctions.getNewProjectName(),
-    projectFunctions.getSPA()
+    projectFunctions.getNewProjectName()
   );
   projectFunctions.clearNewProjectFields();
 });
@@ -65,15 +64,11 @@ submitTask.addEventListener("click", () => {
   );
 });
 
-function addProjectSelectionEventListener(
-  projectNameNoSpaces,
-  projectName,
-  projectArray
-) {
+function addProjectSelectionEventListener(projectNameNoSpaces, projectName) {
   const projectBtn = document.getElementById(projectNameNoSpaces + "_btn");
   projectBtn.addEventListener("click", () => {
     projectFunctions.changeSelectedProject(projectName);
-    projectFunctions.replaceTaskContainer(projectNameNoSpaces);
+    displayFunctions.replaceTaskContainer(projectNameNoSpaces);
     displayFunctions.displayTasksByProject(
       projectFunctions.getSPA(),
       projectNameNoSpaces
