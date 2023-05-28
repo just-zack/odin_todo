@@ -317,8 +317,9 @@ body {
   background-color: var(--secondary_color);
 }
 
-.marked_done {
+.done_btn.marked_done {
   background-color: var(--fourth_color);
+  opacity: 0.5;
 }
 
 .done {

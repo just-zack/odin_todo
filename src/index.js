@@ -5,6 +5,7 @@ import taskFunctions from "./taskHandler.js";
 import displayFunctions from "./displayHandler.js";
 
 projectFunctions.setHome();
+
 let homeBtn = document.getElementById("home");
 homeBtn.addEventListener("click", () => {
   projectFunctions.changeSelectedProject("home");

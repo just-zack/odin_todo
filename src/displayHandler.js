@@ -20,7 +20,6 @@ function createTaskCard(currentTask, currentProject, homeProject) {
   leftContainer.appendChild(doneBtn);
   leftContainer.appendChild(titleDescriptionContainer);
   taskCard.appendChild(taskContent);
-  g;
   titleDescriptionContainer.appendChild(taskName);
   taskName.innerText = "Task: " + currentTask.name;
   titleDescriptionContainer.appendChild(taskDescription);
