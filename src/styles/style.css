@@ -317,6 +317,10 @@ body {
   background-color: var(--secondary_color);
 }
 
+.marked_done {
+  background-color: var(--fourth_color);
+}
+
 .done {
   text-decoration: line-through;
   color: var(--secondary_color);

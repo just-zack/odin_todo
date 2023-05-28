@@ -20,12 +20,14 @@ function createTaskCard(currentTask, currentProject, homeProject) {
   leftContainer.appendChild(doneBtn);
   leftContainer.appendChild(titleDescriptionContainer);
   taskCard.appendChild(taskContent);
+  g;
   titleDescriptionContainer.appendChild(taskName);
   taskName.innerText = "Task: " + currentTask.name;
   titleDescriptionContainer.appendChild(taskDescription);
   doneBtn.addEventListener("click", () => {
     taskName.classList.toggle("done");
     taskDescription.classList.toggle("done");
+    doneBtn.classList.toggle("marked_done");
   });
 
   if (currentTask.date !== "") {
